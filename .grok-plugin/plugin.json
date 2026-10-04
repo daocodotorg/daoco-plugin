@@ -1,0 +1,17 @@
+{
+  "name": "daoco",
+  "version": "1.0.0",
+  "description": "Read your brand context and drafts, start marketing work in Daoco, and follow its progress with dashboard review links. Sign in with a Daoco account on first connect.",
+  "author": {
+    "name": "Daoco LLC",
+    "email": "support@daoco.org",
+    "url": "https://github.com/daocodotorg"
+  },
+  "homepage": "https://daoco.org",
+  "license": "Proprietary",
+  "keywords": [
+    "daoco",
+    "daoco marketing",
+    "daoco mcp"
+  ]
+}

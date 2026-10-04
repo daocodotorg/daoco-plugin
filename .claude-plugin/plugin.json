@@ -1,0 +1,11 @@
+{
+  "name": "daoco",
+  "version": "1.0.0",
+  "description": "Read your brand context and drafts, start marketing work in Daoco, and follow its progress with dashboard review links.",
+  "author": {
+    "name": "Daoco LLC",
+    "email": "support@daoco.org",
+    "url": "https://daoco.org"
+  },
+  "homepage": "https://daoco.org"
+}
