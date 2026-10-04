@@ -8,6 +8,8 @@ Daoco, and follow it to a dashboard review link.
 
 Grok Build: open `/plugin`, search for **Daoco**, and install.
 
+Cursor: install **Daoco** from the Cursor Marketplace.
+
 Any MCP client: add `https://backend.daoco.org/mcp` as a remote MCP server. Setup
 for each client is in the [Daoco docs](https://docs.daoco.org/connections/ai-apps).
 
