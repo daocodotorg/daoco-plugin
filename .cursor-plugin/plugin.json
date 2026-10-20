@@ -1,7 +1,7 @@
 {
   "name": "daoco",
-  "version": "1.0.0",
-  "description": "Read your brand context and drafts, start marketing work in Daoco, and follow its progress with dashboard review links. Sign in with a Daoco account on first connect.",
+  "version": "1.1.0",
+  "description": "Marketing for personal and business brands. Use your brand context, create content and campaigns, research your audience, and follow work in Daoco.",
   "author": {
     "name": "Daoco LLC",
     "email": "support@daoco.org"
@@ -9,7 +9,14 @@
   "homepage": "https://daoco.org",
   "repository": "https://github.com/daocodotorg/daoco-plugin",
   "license": "Proprietary",
-  "keywords": ["daoco", "daoco marketing", "daoco mcp"],
+  "keywords": [
+    "daoco",
+    "marketing",
+    "personal brand",
+    "business brand",
+    "content",
+    "campaigns"
+  ],
   "logo": "assets/logo.svg",
   "skills": "./skills/",
   "mcpServers": "./mcp.json"
