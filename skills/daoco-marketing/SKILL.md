@@ -5,7 +5,7 @@ description: Start, follow, revise, or stop Daoco marketing work; find drafts an
 
 # Work with Daoco
 
-Daoco runs marketing work for personal and business brands. Use its authenticated MCP tools, whose client-specific prefix may vary. For brand questions use the brand-context skill; for creative briefs use content-and-creative; for research briefs use research-and-planning. The workflow below applies to every Daoco request.
+Daoco runs marketing work for personal and business brands. Use its authenticated MCP tools, whose client-specific prefix may vary. For brand questions use `daoco-brand-context`; for creative briefs use `daoco-content-and-creative`; for research briefs use `daoco-research-and-planning`. The workflow below applies to every Daoco request.
 
 ## Select the brand
 

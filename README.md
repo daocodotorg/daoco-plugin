@@ -36,7 +36,10 @@ account. Do not paste a password, access token, or verification code into chat.
 - `daoco-research-and-planning`: brief research, campaign plans, and performance reviews.
 
 These skills use the same Daoco runtime for both personal and business brands.
-They adapt to the selected brand's context and the user's goal.
+They adapt to the selected brand's context and the user's goal. Task-specific
+brief guidance and result checks cover post batches, repurposing, pages, media,
+creator kits, performance reviews, campaign plans, and website research. Full
+production procedures stay in Daoco so they can improve without a plugin update.
 
 ## Example requests
 
