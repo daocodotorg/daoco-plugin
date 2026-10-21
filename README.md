@@ -19,9 +19,8 @@ Grok Build: open `/plugin`, search for **Daoco**, and install.
 
 Cursor: install **Daoco** from the Cursor Marketplace.
 
-ChatGPT and Codex: install the **Daoco** plugin from the plugin directory. It uses
-the approved Daoco app, mapped in `.app.json`; the listing lives in
-`.codex-plugin/plugin.json`.
+ChatGPT and Codex: install the **Daoco** plugin from the plugin directory. It connects to
+`https://backend.daoco.org/mcp`; the listing lives in `.codex-plugin/plugin.json`.
 
 Any MCP client: add `https://backend.daoco.org/mcp` as a remote MCP server. Setup
 for each client is in the [Daoco docs](https://docs.daoco.org/connections/ai-apps).

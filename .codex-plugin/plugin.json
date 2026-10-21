@@ -20,13 +20,12 @@
   ],
   "skills": "./skills/",
   "mcpServers": "./.mcp.json",
-  "apps": "./.app.json",
   "interface": {
     "displayName": "Daoco",
     "shortDescription": "Your brand's marketing team",
     "longDescription": "Daoco is a marketing team for your personal or business brand. It keeps what your brand knows about itself, including voice, audience, positioning, visual identity, products, and past performance, and uses it to do marketing work: research audiences and competitors, plan campaigns, write social posts, emails, and website pages, make images, and review performance.\n\nWith this plugin you can read your brand's saved context; start work in your own words and follow it as it runs; ask for changes; and get back the finished posts, reports, charts, images, and videos. Work runs in Daoco, takes minutes, and uses your workspace's tokens.\n\nFor people building a personal brand (creators, founders, consultants, experts) and for businesses and marketing teams.\n\nLimitations: the plugin cannot approve, publish, or schedule anything. Those decisions happen in Daoco through the review links it returns. Creating an account and brand, connecting social accounts and other apps, and billing happen in Daoco at daoco.org.",
     "developerName": "Daoco LLC",
-    "category": "Productivity",
+    "category": "Business & Operations",
     "capabilities": [
       "Read",
       "Write"
