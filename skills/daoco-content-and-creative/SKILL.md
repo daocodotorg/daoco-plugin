@@ -20,7 +20,7 @@ Use the relevant guidance below when it fits the user's request. Carry explicit 
 - A batch of posts needs the requested count, destinations, and any theme or dates. Keep copy, creative concepts, generated media, and saved drafts distinct. If the user asks for complete posts, an outline is not completion.
 - Repurposing needs the source material and intended destinations. Preserve the source's claims and core idea while requesting native openings, length, structure, and calls to action for each platform. Do not ask for identical copy pasted everywhere.
 - A page needs its reader, purpose, and any source or search intent the user supplied. Preserve the requested page type, such as a comparison, landing page, or guide. Do not turn every page into a blog post.
-- An image or video brief should carry the intended placement, supplied references, exact text that must appear, and any requested size, duration, or visual style. Send reference images as `files` (an `uploadId` from `upload_file` or a public https link), as the shared workflow describes. Never put a local filesystem path in the request as though Daoco could open it.
+- An image or video brief should carry the intended placement, supplied references, exact text that must appear, and any requested size, duration, or visual style. Send reference images as `files` (an `uploadId` from `upload_file` or a public https link) when the server offers them, as the shared workflow describes. Never put a local filesystem path in the request as though Daoco could open it.
 - A media kit or sponsor pitch needs supported audience numbers and genuine offers or partnerships. Missing rates and metrics remain missing; they are not an invitation to invent them.
 
 ## Check what came back

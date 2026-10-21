@@ -6,9 +6,10 @@ Use your brand's voice, knowledge, and connected tools to create posts, website
 content, images, and campaigns. Research your audience, review performance, and
 pick up work already underway in Daoco.
 
-No Daoco account is needed to start: signing in from the app creates one, and
-the app can set up a personal or business brand from a website, public profiles,
-or a description. Work runs asynchronously and uses workspace tokens. Each app
+Sign in with a Daoco account. Where the server offers brand setup, signing in
+creates an account and the app can set up a personal or business brand from a
+website, public profiles, or a description; otherwise create the brand at
+daoco.org first. Work runs asynchronously and uses workspace tokens. Each app
 bound to a brand uses an assistant slot. Approvals, publishing, and scheduling
 happen in the Daoco dashboard through returned review links.
 
@@ -32,10 +33,11 @@ password, access token, or verification code into chat.
 ## What it includes
 
 - MCP server `daoco` at `https://backend.daoco.org/mcp` (streamable HTTP):
-  `list_brands`, `use_brand`, `create_brand`, `review_brand_setup`,
-  `get_brand_context`, `search_brand`, `list_work`, `upload_file`,
-  `start_work`, `continue_work`, `get_work_status`, `read_work`, `stop_work`,
-  `get_output`.
+  `list_brands`, `use_brand`, `get_brand_context`, `search_brand`,
+  `list_work`, `start_work`, `continue_work`, `get_work_status`, `read_work`,
+  `stop_work`, `get_output`. Newer servers add `create_brand`,
+  `review_brand_setup`, and `upload_file`; the skills use them only when the
+  server lists them.
 - `daoco-marketing`: start, follow, revise, and stop work; attach images; find
   drafts and pending decisions; retrieve reports, images, and videos.
 - `daoco-brand-setup`: create a brand, review its drafted profile, and offer the

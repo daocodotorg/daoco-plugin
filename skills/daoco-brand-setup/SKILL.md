@@ -5,7 +5,9 @@ description: Create a personal or business brand in Daoco from a website, public
 
 # Set up a brand in Daoco
 
-Read [the shared Daoco workflow](../daoco-marketing/SKILL.md) for sign-in, tool boundaries, and running work. Signing in from the app creates a Daoco account when the person has none, so a new person can start here.
+Read [the shared Daoco workflow](../daoco-marketing/SKILL.md) for sign-in, tool boundaries, and running work.
+
+This skill needs the `create_brand` and `review_brand_setup` tools. If the Daoco server does not list them, it cannot create a brand from the app: send the person to https://daoco.org to create the brand there, then select it with `use_brand`. Do not call a tool the server does not list. On servers that offer them, signing in from the app creates a Daoco account when the person has none, so a new person can start here.
 
 ## Gather what Daoco needs
 
