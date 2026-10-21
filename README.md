@@ -6,10 +6,11 @@ Use your brand's voice, knowledge, and connected tools to create posts, website
 content, images, and campaigns. Research your audience, review performance, and
 pick up work already underway in Daoco.
 
-Requires an existing Daoco account with workspace access. Work runs asynchronously
-and uses workspace tokens. Each app bound to a brand uses an assistant slot.
-Approvals, publishing, and scheduling happen in the Daoco dashboard through
-returned review links.
+No Daoco account is needed to start: signing in from the app creates one, and
+the app can set up a personal or business brand from a website, public profiles,
+or a description. Work runs asynchronously and uses workspace tokens. Each app
+bound to a brand uses an assistant slot. Approvals, publishing, and scheduling
+happen in the Daoco dashboard through returned review links.
 
 ## Installation
 
@@ -20,17 +21,21 @@ Cursor: install **Daoco** from the Cursor Marketplace.
 Any MCP client: add `https://backend.daoco.org/mcp` as a remote MCP server. Setup
 for each client is in the [Daoco docs](https://docs.daoco.org/connections/ai-apps).
 
-On first connection, the client opens Daoco sign-in in the browser. Use your Daoco
-account. Do not paste a password, access token, or verification code into chat.
+On first connection, the client opens Daoco sign-in in the browser. Sign in with
+your Daoco account, or with a verified email to create one. Do not paste a
+password, access token, or verification code into chat.
 
 ## What it includes
 
 - MCP server `daoco` at `https://backend.daoco.org/mcp` (streamable HTTP):
-  `list_brands`, `use_brand`, `get_brand_context`, `find_drafts`,
-  `list_needs_you`, `list_recent_work`, `start_work`, `continue_work`,
-  `get_work_status`, `read_work`, `stop_work`, `show_visual`, `get_asset`.
-- `daoco-marketing`: start, follow, revise, and stop work; find drafts and
-  pending decisions; retrieve results and assets.
+  `list_brands`, `use_brand`, `create_brand`, `review_brand_setup`,
+  `get_brand_context`, `search_brand`, `list_work`, `upload_file`,
+  `start_work`, `continue_work`, `get_work_status`, `read_work`, `stop_work`,
+  `get_output`.
+- `daoco-marketing`: start, follow, revise, and stop work; attach images; find
+  drafts and pending decisions; retrieve reports, images, and videos.
+- `daoco-brand-setup`: create a brand, review its drafted profile, and offer the
+  first work Daoco suggests.
 - `daoco-brand-context`: apply saved voice, audience, positioning, and visual identity.
 - `daoco-content-and-creative`: brief content and media work, then revise it in the same thread.
 - `daoco-research-and-planning`: brief research, campaign plans, and performance reviews.
@@ -43,8 +48,9 @@ production procedures stay in Daoco so they can improve without a plugin update.
 
 ## Example requests
 
+- "Set up my personal brand in Daoco from my LinkedIn profile."
 - "Use my personal brand in Daoco to draft a LinkedIn post from these notes."
-- "Create three product launch image concepts for my business in Daoco."
+- "Create three product launch images for my business in Daoco in the style of this reference image."
 - "Ask Daoco to research which topics matter to my audience."
 - "Show me the finished images from that Daoco thread."
 - "What is waiting for my review in Daoco?"

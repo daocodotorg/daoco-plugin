@@ -13,7 +13,7 @@ Adapt the brief to the brand's actual goals. A personal brand may be building an
 
 Send the brief through `start_work`, or `continue_work` when extending an existing investigation. Daoco selects research and planning specialists and accesses its available connections. Do not promise data from an account merely because the platform supports that integration.
 
-Read the finished report with `read_work`, preserving sources, measurement periods, limitations, and distinctions between observed results and recommendations. Use `show_visual` for a returned chart or report. Report unavailable data as unavailable, not zero. A plan does not authorize executing every recommendation; start subsequent production only when the user requests it.
+Read the finished report with `read_work`, preserving sources, measurement periods, limitations, and distinctions between observed results and recommendations. Use `get_output` for a returned chart or report; where the client cannot show it, share the PNG link and the thread link. Report unavailable data as unavailable, not zero. A plan does not authorize executing every recommendation; start subsequent production only when the user requests it.
 
 ## Match evidence to the decision
 
