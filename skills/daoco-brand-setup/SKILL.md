@@ -33,7 +33,7 @@ When research lands, show the person the drafted name, description, industry, au
 - Answer a question with its `questionId` and the person's `answer`, in their words. These answers become the brand's documents, so never answer a question for them, and never fill in beliefs, experiences, credentials, or results they did not state. Skipping a question is fine.
 - Call with `confirm: true` once the person is satisfied. Daoco then writes the brand's summary, voice, and documents, which takes a few minutes.
 
-The person can skip the review: confirm right away, or leave it, and setup finishes on its own 30 minutes after the brand was created. Only the person who created the brand can change the review. A brand set up in the Daoco dashboard has no review here; edit it on its Brand page in Daoco.
+The person can skip the review: confirm right away, or leave it, and setup finishes on its own 30 minutes after the brand was created. Only the person who created the brand can change the review. A brand set up in the Daoco dashboard has no review here, and a review the person takes over in Daoco or that has already finished is closed to the app; `review_brand_setup` says so. Then share the brand's Daoco link and continue there.
 
 ## Offer the first work
 
