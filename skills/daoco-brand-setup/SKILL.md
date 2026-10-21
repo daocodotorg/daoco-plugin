@@ -5,7 +5,9 @@ description: Create a personal or business brand in Daoco from a website, public
 
 # Set up a brand in Daoco
 
-Read [the shared Daoco workflow](../daoco-marketing/SKILL.md) for sign-in, tool boundaries, and running work. Signing in from the app creates a Daoco account when the person has none, so a new person can start here.
+Read [the shared Daoco workflow](../daoco-marketing/SKILL.md) for sign-in, tool boundaries, and running work.
+
+This skill needs the `create_brand` and `review_brand_setup` tools. If the Daoco server does not list them, it cannot create a brand from the app: send the person to https://daoco.org to create the brand there, then select it with `use_brand`. Do not call a tool the server does not list. On servers that offer them, signing in from the app creates a Daoco account when the person has none, so a new person can start here.
 
 ## Gather what Daoco needs
 
@@ -31,7 +33,7 @@ When research lands, show the person the drafted name, description, industry, au
 - Answer a question with its `questionId` and the person's `answer`, in their words. These answers become the brand's documents, so never answer a question for them, and never fill in beliefs, experiences, credentials, or results they did not state. Skipping a question is fine.
 - Call with `confirm: true` once the person is satisfied. Daoco then writes the brand's summary, voice, and documents, which takes a few minutes.
 
-The person can skip the review: confirm right away, or leave it, and setup finishes on its own 30 minutes after the brand was created. Only the person who created the brand can change the review. A brand set up in the Daoco dashboard has no review here; edit it on its Brand page in Daoco.
+The person can skip the review: confirm right away, or leave it, and setup finishes on its own 30 minutes after the brand was created. Only the person who created the brand can change the review. A brand set up in the Daoco dashboard has no review here, and a review the person takes over in Daoco or that has already finished is closed to the app; `review_brand_setup` says so. Then share the brand's Daoco link and continue there.
 
 ## Offer the first work
 

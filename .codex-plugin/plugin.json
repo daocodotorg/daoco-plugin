@@ -1,0 +1,47 @@
+{
+  "name": "daoco",
+  "version": "1.1.0",
+  "description": "Marketing for personal and business brands. Set up your brand, use its context, create content and campaigns, research your audience, and follow work in Daoco.",
+  "author": {
+    "name": "Daoco LLC",
+    "email": "support@daoco.org",
+    "url": "https://daoco.org"
+  },
+  "homepage": "https://daoco.org",
+  "repository": "https://github.com/daocodotorg/daoco-plugin",
+  "license": "Proprietary",
+  "keywords": [
+    "marketing",
+    "personal brand",
+    "social media",
+    "content",
+    "campaigns",
+    "seo"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "Daoco",
+    "shortDescription": "Your brand's marketing team",
+    "longDescription": "Daoco is a marketing team for your personal or business brand. It keeps what your brand knows about itself, including voice, audience, positioning, visual identity, products, and past performance, and uses it to do marketing work: research audiences and competitors, plan campaigns, write social posts, emails, and website pages, make images, and review performance.\n\nWith this plugin you can read your brand's saved context; start work in your own words and follow it as it runs; ask for changes; and get back the finished posts, reports, charts, images, and videos. Work runs in Daoco, takes minutes, and uses your workspace's tokens.\n\nFor people building a personal brand (creators, founders, consultants, experts) and for businesses and marketing teams.\n\nLimitations: the plugin cannot approve, publish, or schedule anything. Those decisions happen in Daoco through the review links it returns. Creating an account and brand, connecting social accounts and other apps, and billing happen in Daoco at daoco.org.",
+    "developerName": "Daoco LLC",
+    "category": "Business & Operations",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://daoco.org",
+    "supportURL": "https://daoco.org/contact",
+    "privacyPolicyURL": "https://daoco.org/privacy",
+    "termsOfServiceURL": "https://daoco.org/tos",
+    "defaultPrompt": [
+      "What does Daoco know about my brand's voice and audience?",
+      "Draft a week of LinkedIn posts in my brand's voice",
+      "What is waiting for my review in Daoco?"
+    ],
+    "brandColor": "#6A5CFE",
+    "composerIcon": "./assets/logo.svg",
+    "logo": "./assets/logo.png",
+    "screenshots": []
+  }
+}

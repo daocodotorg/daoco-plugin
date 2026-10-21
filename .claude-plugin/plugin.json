@@ -7,5 +7,18 @@
     "email": "support@daoco.org",
     "url": "https://daoco.org"
   },
-  "homepage": "https://daoco.org"
+  "homepage": "https://daoco.org",
+  "repository": "https://github.com/daocodotorg/daoco-plugin",
+  "license": "LicenseRef-Daoco-Proprietary",
+  "keywords": [
+    "daoco",
+    "marketing",
+    "personal brand",
+    "business brand",
+    "social media",
+    "content",
+    "campaigns",
+    "seo"
+  ],
+  "privacyPolicyUrl": "https://daoco.org/privacy"
 }
