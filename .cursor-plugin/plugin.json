@@ -14,8 +14,10 @@
     "marketing",
     "personal brand",
     "business brand",
+    "social media",
     "content",
-    "campaigns"
+    "campaigns",
+    "seo"
   ],
   "logo": "assets/logo.svg",
   "skills": "./skills/",

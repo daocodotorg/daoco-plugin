@@ -17,6 +17,8 @@ happen in the Daoco dashboard through returned review links.
 
 Grok Build: open `/plugin`, search for **Daoco**, and install.
 
+Claude Code: run `/plugin install daoco --marketplace daocodotorg/daoco-plugin`.
+
 Cursor: install **Daoco** from the Cursor Marketplace.
 
 ChatGPT and Codex: install the **Daoco** plugin from the plugin directory. It connects to

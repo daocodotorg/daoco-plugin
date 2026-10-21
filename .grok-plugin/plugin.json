@@ -5,7 +5,7 @@
   "author": {
     "name": "Daoco LLC",
     "email": "support@daoco.org",
-    "url": "https://github.com/daocodotorg"
+    "url": "https://daoco.org"
   },
   "homepage": "https://daoco.org",
   "license": "Proprietary",
@@ -14,7 +14,10 @@
     "marketing",
     "personal brand",
     "business brand",
+    "social media",
     "content",
-    "campaigns"
-  ]
+    "campaigns",
+    "seo"
+  ],
+  "repository": "https://github.com/daocodotorg/daoco-plugin"
 }

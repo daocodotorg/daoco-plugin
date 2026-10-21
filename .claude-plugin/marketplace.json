@@ -1,0 +1,33 @@
+{
+  "name": "daoco",
+  "owner": {
+    "name": "Daoco LLC",
+    "email": "support@daoco.org"
+  },
+  "description": "Daoco's plugin for Claude Code: marketing for personal and business brands.",
+  "plugins": [
+    {
+      "name": "daoco",
+      "source": "./",
+      "description": "Marketing for personal and business brands. Set up your brand, use its context, create content and campaigns, research your audience, and follow work in Daoco.",
+      "version": "1.1.0",
+      "author": {
+        "name": "Daoco LLC",
+        "email": "support@daoco.org",
+        "url": "https://daoco.org"
+      },
+      "homepage": "https://daoco.org",
+      "category": "productivity",
+      "keywords": [
+        "daoco",
+        "marketing",
+        "personal brand",
+        "business brand",
+        "social media",
+        "content",
+        "campaigns",
+        "seo"
+      ]
+    }
+  ]
+}
