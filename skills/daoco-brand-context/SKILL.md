@@ -1,11 +1,11 @@
 ---
 name: daoco-brand-context
-description: Read and apply a personal or business brand's saved voice, audience, positioning, and visual identity from Daoco. Use for brand questions or to ground the user's current work in their Daoco context.
+description: Read and apply a personal or business brand's saved voice, audience, positioning, and visual identity from Daoco, and export the brand. Use for brand questions, to ground the user's current work in their Daoco context, or to take the brand's files out of Daoco.
 ---
 
 # Use brand context
 
-Read [the shared Daoco workflow](../daoco-marketing/SKILL.md) for brand selection and tool boundaries. Call `get_brand_context` for the selected brand and use the relevant facts and documents to answer or inform the user's work. Pass `task` to get the context for one piece of work (the visual style Daoco would use, the logo, and matching document passages), or `sections` for the full visual identity or document list. Use `search_brand` to find passages in brand documents or core brand images, and to read a document's full text by its `documentId`. These reads use no workspace tokens.
+Read [the shared Daoco workflow](../daoco-marketing/SKILL.md) for brand selection and tool boundaries. Call `get_brand_context` for the selected brand and use the relevant facts and documents to answer or inform the user's work. Pass `task` to get the context for one piece of work (the visual style Daoco would use, the logo, and matching document passages), or `sections` for the full visual identity (`visual`), the document list (`documents`), or the procedures the brand can run with their commands (`procedures`). Use `search_brand` to find passages in brand documents or core brand images, and to read a document's full text by its `documentId`. These reads use no workspace tokens.
 
 If `get_brand_context` reports `setup`, the brand is still being set up; follow `daoco-brand-setup` instead of treating its context as complete.
 
@@ -20,3 +20,9 @@ Answer the brand question rather than dumping every saved document. When the use
 For a voice review, compare the supplied text with the saved guidance. For a fuller check of a draft (would the audience recognize the problem, can every claim be supported), `/read-through` runs one in Daoco. Point to specific phrases, explain the mismatch, and suggest a revision without changing supported claims. Reading context and advising in this chat does not require starting a paid Daoco run. Creating durable marketing deliverables or saving changes does.
 
 If saved documents conflict, identify the conflict and prefer a clearly dated or explicitly designated current source. Ask when that choice would materially affect the answer and the current source is unclear. Do not quietly merge contradictory positioning or treat a suggestion from this conversation as saved brand truth.
+
+## Use the brand outside Daoco
+
+When the person writes copy, builds a page, or designs something in this app, apply the saved context directly: `get_brand_context` with a `task` returns the voice, visual style, logo, colors, fonts, and passages for that piece of work. Image links from `search_brand` and the `visual` section can serve as references.
+
+`export_brand` builds a zip of the brand: profile, summary, rules, brand documents, voice, Daoco Looks with their example images, competitors, skills as `SKILL.md` folders, and library images and documents. Connections, posts, threads, and analytics are not included. Only a workspace owner or admin can export. Call again while it builds; a ready export's download link works for a day. Use it when the person asks for their brand files or wants to keep them in a project. `create_brand` can set up a brand from an export's files.

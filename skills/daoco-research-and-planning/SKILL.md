@@ -1,6 +1,6 @@
 ---
 name: daoco-research-and-planning
-description: Ask Daoco to research audiences or competitors, plan campaigns, review marketing performance, or investigate website and SEO opportunities for a personal or business brand.
+description: Ask Daoco to research audiences or competitors, plan campaigns, review marketing performance, investigate website and SEO opportunities, or say what to make next from the brand's results, for a personal or business brand.
 ---
 
 # Research and plan with Daoco
@@ -14,6 +14,12 @@ Adapt the brief to the brand's actual goals. A personal brand may be building an
 Send the brief through `start_work`, or `continue_work` when extending an existing investigation. Daoco selects research and planning specialists and accesses its available connections. Do not promise data from an account merely because the platform supports that integration.
 
 Read the finished report with `read_work`, preserving sources, measurement periods, limitations, and distinctions between observed results and recommendations. Use `get_output` for a returned chart or report; where the client cannot show it, share the PNG link and the thread link. Report unavailable data as unavailable, not zero. A plan does not authorize executing every recommendation; start subsequent production only when the user requests it.
+
+## What to make next
+
+`list_content_ideas` reads the pages and posts Daoco already suggested from the brand's social results, Search Console, AI visibility, keyword demand, and competitors' rankings, with no workspace tokens. Each idea has its evidence, a score, its status, and `startWork`, the exact `start_work` request that makes it (such as `/write-page <subject>`). `view: "history"` shows what was made and how it did against the account's usual engagement, and `whatWorked` sums that up by format and platform. Answer "what should I post or write next" from these first. Start an idea only when the person picks it, passing its `startWork` as given. When there are no ideas, or the person wants a fresh plan, `/make-next` or `/ideas` through `start_work` records new ones.
+
+For fixes Daoco found on the brand's own site, use `daoco-website-improvements`. For a recurring review, such as a weekly performance check, use `daoco-routines`.
 
 ## Match evidence to the decision
 

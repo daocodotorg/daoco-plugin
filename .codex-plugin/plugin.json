@@ -1,7 +1,7 @@
 {
   "name": "daoco",
-  "version": "1.1.0",
-  "description": "Marketing for personal and business brands. Set up your brand, use its context, create content and campaigns, research your audience, and follow work in Daoco.",
+  "version": "1.2.0",
+  "description": "Marketing for personal and business brands. Set up your brand, use its context, create and publish content, run campaigns and recurring work, fix your website, and follow work in Daoco.",
   "author": {
     "name": "Daoco LLC",
     "email": "support@daoco.org",
@@ -23,7 +23,7 @@
   "interface": {
     "displayName": "Daoco",
     "shortDescription": "Your brand's marketing team",
-    "longDescription": "Daoco is a marketing team for your personal or business brand. It keeps what your brand knows about itself, including voice, audience, positioning, visual identity, products, and past performance, and uses it to do marketing work: research audiences and competitors, plan campaigns, write social posts, emails, and website pages, make images, and review performance.\n\nWith this plugin you can read your brand's saved context; start work in your own words and follow it as it runs; ask for changes; and get back the finished posts, reports, charts, images, and videos. Work runs in Daoco, takes minutes, and uses your workspace's tokens.\n\nFor people building a personal brand (creators, founders, consultants, experts) and for businesses and marketing teams.\n\nLimitations: the plugin cannot approve, publish, or schedule anything. Those decisions happen in Daoco through the review links it returns. Creating an account and brand, connecting social accounts and other apps, and billing happen in Daoco at daoco.org.",
+    "longDescription": "Daoco is a marketing team for your personal or business brand. It keeps what your brand knows about itself, including voice, audience, positioning, visual identity, products, and past performance, and uses it to do marketing work: research audiences and competitors, plan campaigns, write social posts, emails, and website pages, make images and video, and review performance.\n\nWith this plugin you can set up a brand and read its saved context; start work in your own words and follow it as it runs; ask for changes; and get back the finished posts, reports, charts, images, and videos. You can also post what you wrote to your connected social accounts now or on a schedule, use your other connected apps such as a CRM or store, set up routines that run while the app is closed, work through the fixes Daoco found on your website, and see what Daoco suggests making next. Work runs in Daoco, takes minutes, and uses your workspace's tokens.\n\nFor people building a personal brand (creators, founders, consultants, experts) and for businesses and marketing teams.\n\nLimitations: the plugin never approves anything. Your brand's approval settings in Daoco decide whether publishing and changes in connected apps wait for a person, who approves in Daoco or from their personal assistant through the links the plugin returns. Connecting accounts and billing happen in Daoco at daoco.org.",
     "developerName": "Daoco LLC",
     "category": "Business & Operations",
     "capabilities": [
@@ -35,9 +35,9 @@
     "privacyPolicyURL": "https://daoco.org/privacy",
     "termsOfServiceURL": "https://daoco.org/tos",
     "defaultPrompt": [
-      "What does Daoco know about my brand's voice and audience?",
-      "Draft a week of LinkedIn posts in my brand's voice",
-      "What is waiting for my review in Daoco?"
+      "What should my brand post next, based on what has worked?",
+      "Schedule this LinkedIn post for Tuesday at 9am",
+      "Work on my queued Daoco website improvements"
     ],
     "brandColor": "#6A5CFE",
     "composerIcon": "./assets/logo.svg",
