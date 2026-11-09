@@ -1,11 +1,11 @@
 {
   "name": "daoco",
-  "version": "1.1.0",
-  "description": "Marketing for personal and business brands. Set up your brand, use its context, create content and campaigns, research your audience, and follow work in Daoco.",
+  "version": "1.2.0",
+  "description": "Marketing for personal and business brands. Set up your brand, use its context, create and publish content, run campaigns and recurring work, fix your website, and follow work in Daoco.",
   "author": {
     "name": "Daoco LLC",
     "email": "support@daoco.org",
-    "url": "https://github.com/daocodotorg"
+    "url": "https://daoco.org"
   },
   "homepage": "https://daoco.org",
   "license": "Proprietary",
@@ -14,7 +14,10 @@
     "marketing",
     "personal brand",
     "business brand",
+    "social media",
     "content",
-    "campaigns"
-  ]
+    "campaigns",
+    "seo"
+  ],
+  "repository": "https://github.com/daocodotorg/daoco-plugin"
 }
