@@ -43,10 +43,10 @@ Setup does not wait for the person. Daoco starts writing the summary, voice, doc
 
 ## Connect accounts
 
-After the profile, ask which accounts the person wants Daoco to post to or read from, and offer `get_connect_link` for each (see `daoco-social-posting`). Connecting happens in the browser through that link, never in chat. Work that reads the person's own posts needs those accounts.
+After the profile, ask which accounts the person wants Daoco to post to or read from. `get_brand_status` lists the accounts Daoco found for the brand that are not connected yet, each with the `target` `get_connect_link` takes; offer a link for each one the person wants (see `daoco-social-posting`). Connecting happens in the browser through that link, never in chat. Work that reads the person's own posts needs those accounts.
 
 ## Offer the first work
 
 `get_brand_context` reports `setup` while the brand is being set up: `researching`, `review`, `research_failed`, `writing`, or `needs_review` with a link to finish in Daoco. Report that state instead of starting work against a half-written brand.
 
-When setup finishes, `get_brand_context` may list `firstWork`: up to three suggested first pieces of work, each a ready `start_work` request that runs a Daoco command, such as a point-of-view post or a bio kit. Offer them in plain words and let the person choose. Pass the chosen request to `start_work` as given, and follow it with the shared workflow. Starting it uses workspace tokens.
+When setup finishes, `get_brand_context` and `get_brand_status` may list `firstWork`: up to three suggested first pieces of work, such as a point-of-view post or a bio kit. Offer them in plain words and let the person choose. Run the chosen one with `run_workflow` (its command and subject) where that tool is listed, or pass its request to `start_work` as given, and follow it with the shared workflow. Starting it uses workspace tokens.
