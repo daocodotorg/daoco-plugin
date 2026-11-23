@@ -42,12 +42,14 @@ password, access token, or verification code into chat.
   as words, so workflows are asked for in plain words.
   - Brands: `list_brands`, `use_brand`, `create_brand`, `review_brand_setup`,
     `get_brand_context`, `get_brand_status`, `get_brief`, `get_brand_visuals`,
-    `list_brand_documents`, `search_brand`, `export_brand`.
+    `list_brand_documents`, `search_brand`, `export_brand`, `pull_brand`*,
+    `push_brand`*.
   - Work: `list_work`, `upload_file`, `start_work`, `run_workflow`*,
     `list_workflows`*, `continue_work`, `get_work_status`, `read_work`,
     `stop_work`, `get_output`, `list_updates`.
   - Posting and results: `list_channels`, `get_connect_link`, `create_post`,
-    `update_post`, `schedule_post`, `get_post`, `cancel_post`, `get_results`.
+    `update_post`, `schedule_post`, `get_post`, `cancel_post`, `delete_post`,
+    `get_results`.
   - Connected apps: `list_connections`, `find_assets`, `find_store_records`,
     `find_pages`, `get_site_report`, `list_apps`*, `call_app_tool`*,
     `get_app_call`*, `cancel_app_call`*.
@@ -83,6 +85,15 @@ password, access token, or verification code into chat.
 These skills use the same Daoco runtime for both personal and business brands.
 They adapt to the selected brand's context and the person's goal. Full
 production procedures stay in Daoco so they can improve without a plugin update.
+
+## Grok Bot templates
+
+`grok-bots/` holds eight ready-made Grok Bots built on this plugin, one file per
+bot with its name, title, description, routines, and instructions: Brand Desk,
+Week of Posts, What's Working, Reply Desk, Website Fix Desk, Competitor Watch,
+Repurpose Desk, and Brand Crew Lead. They work alone or as a crew on one brand.
+[grok-bots/README.md](https://github.com/daocodotorg/daoco-plugin/tree/main/grok-bots) says how to make each one in Grok and
+submit it to grok-bot.directory.
 
 ## Example requests
 
