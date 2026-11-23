@@ -5,27 +5,37 @@ description: Ask Daoco to create or revise social posts, website pages, emails, 
 
 # Create content with Daoco
 
-Read [the shared Daoco workflow](../daoco-marketing/SKILL.md) for selection, execution, retries, results, and approvals. Use `get_brand_context` when the brief depends on saved brand facts not already available.
+Read [the shared Daoco workflow](../daoco-marketing/SKILL.md) for selection, execution, retries, results, and approvals.
 
-Carry the user's goal, audience, channel, deliverable, supplied source material, and constraints into the request. Ask only for missing details that would materially change the work. Let Daoco use its saved brand knowledge and connected sources instead of making the user repeat them. Preserve requested quantities and formats; a single post request is not permission to launch a campaign.
+Carry the person's goal, audience, channel, deliverable, source material, and constraints into the request. Ask only for missing details that would change the work. Let Daoco use its saved brand knowledge and connected sources instead of making the person repeat them. Keep requested quantities and formats; a single post is not permission to launch a campaign.
 
-For personal brands, ground content in supplied expertise and experiences. A point-of-view or story post needs the person's own opinion or experience; when the request and saved context have none, `/pov` with the topic asks the person what they believe and what happened, then writes from their answers. That first run ends with questions and angles, not a post. Show them to the person, then send their answers in their words through `continue_work` on the same thread, starting with `/pov`. Never answer the questions for them. In a batch such as `/week-of-posts`, a personal brand's point-of-view or story post with no substance comes back the same way while the rest of the batch is written. For businesses, ground it in their actual products, offers, and evidence. Never invent a testimonial, performance claim, or personal anecdote to fill a brief.
+When the person has the exact post text and only wants it saved or posted, use `daoco-social-posting` instead of a paid run. When this app writes the copy itself, call `get_brief` for the task and channel first and write from it.
 
-Delegate production through `start_work`. For a revision, use `continue_work` on the existing thread and identify the output and requested changes. Daoco handles specialist selection, visual styles, assets, and saved drafts. Retrieve finished text with `read_work` and images, videos, charts, or reports with `get_output`. `list_work` with `view: "drafts"` lists saved post drafts. A completed draft is not a published or scheduled post. When the person then asks to publish or schedule one, follow `daoco-social-posting` with the draft's `postId`; otherwise return the review link. When the person already has the exact post text and only wants it saved or posted, use `daoco-social-posting` directly instead of a paid run.
+## Ask Daoco to make it
+
+Send production through `start_work`, or through `run_workflow` when the person names one of Daoco's workflows or a Daoco read returned one. Where `run_workflow` is not listed, describe the same work in words; a typed `/command` is read as words there. Useful workflows, where offered:
+
+- A week of posts, posts from the person's own photos and videos (attach them), repurposing a post or page, a carousel, short vertical clips from a longer video, an email, product copy, a media kit, a page for the website.
+- A point-of-view or story post (`pov`): it needs the person's own opinion or experience. The first run ends with questions, not a post. Show them, then send the person's answers in their words through `continue_work` on the same thread. Never answer for them.
+
+Pass an `ideaId` from `list_content_ideas` to `start_work` when the work makes that idea, so it is claimed and measured.
+
+For a revision, use `continue_work` on the existing thread and name the output and the change. Daoco handles specialists, visual styles, assets, and saved drafts. Retrieve text with `read_work` and images, video, charts, or reports with `get_output`. `list_work` with `view: "drafts"` lists saved drafts. A completed draft is not published or scheduled; when the person asks to post one, follow `daoco-social-posting` with its `postId`.
 
 ## Brief the actual deliverable
 
-Use the relevant guidance below when it fits the user's request. Carry explicit constraints into the brief; do not turn these into extra mandatory questions or silently enlarge the task.
+Use what fits; do not turn these into extra questions or enlarge the task.
 
-- A batch of posts needs the requested count, destinations, and any theme or dates. Keep copy, creative concepts, generated media, and saved drafts distinct. If the user asks for complete posts, an outline is not completion.
-- Repurposing needs the source material and intended destinations. Preserve the source's claims and core idea while requesting native openings, length, structure, and calls to action for each platform. Do not ask for identical copy pasted everywhere.
-- A page needs its reader, purpose, and any source or search intent the user supplied. Preserve the requested page type, such as a comparison, landing page, or guide. Do not turn every page into a blog post.
-- An image or video brief should carry the intended placement, supplied references, exact text that must appear, and any requested size, duration, or visual style. Send reference images and source videos as `files` (an `uploadId` from `upload_file`, or a public https link for an image), as the shared workflow describes. Never put a local filesystem path in the request as though Daoco could open it.
-- Posts from the person's own photos or videos start with `/content-dump` and the files attached; short vertical clips from a longer video use `/short-form`. Send the media itself; a description of it is not a substitute.
-- A media kit or sponsor pitch needs supported audience numbers and genuine offers or partnerships. Missing rates and metrics remain missing; they are not an invitation to invent them.
+- A batch of posts needs the count, destinations, and any theme or dates. Keep copy, creative concepts, generated media, and saved drafts distinct; an outline is not a finished batch.
+- Repurposing needs the source and the destinations. Keep the source's claims and idea, with native openings, length, structure, and calls to action for each platform.
+- A page needs its reader, purpose, and any source or search intent. Keep the page type (comparison, landing page, guide); not every page is a blog post.
+- An image or video brief carries placement, references, exact text that must appear, and any size, duration, or style. Send references and source video as `files`, never as a local path.
+- A media kit or sponsor pitch needs supported audience numbers and real offers. Missing rates and metrics stay missing.
+
+For personal brands, ground content in the person's own expertise and experiences; for businesses, in their products, offers, and evidence. Never invent a testimonial, result, or personal anecdote to fill a brief.
 
 ## Check what came back
 
-Before reporting success, compare the returned work with the user's request: count, destinations, format, required text, and whether the requested files or saved drafts exist. Distinguish a creative concept from a generated asset and a proposed document change from an applied change.
+Before reporting success, compare the work with the request: count, destinations, format, required text, and whether the files or drafts exist. Distinguish a concept from a generated asset, and a proposed document change from an applied one.
 
-Questions Daoco asks because only the person can supply an opinion, experience, or result are not a gap: relay them instead of asking Daoco to write the piece anyway. If a result omits something else explicitly requested, name the gap. If the receipt has a `notice` that a file was not sent, fix the attachment before relying on the result. A focused follow-up on the same thread may finish the authorized task; avoid repeatedly restarting the whole job. If it remains incomplete after one corrective follow-up, return the useful work and explain what is still missing. Do not claim to have visually inspected an image or video unless the client actually showed it to you; `get_output` returns an inline preview for images where the client displays it.
+Questions Daoco asks because only the person can supply an opinion, experience, or result are not a gap: relay them instead of asking Daoco to write it anyway. If something else requested is missing, name it. If a receipt `notice` says a file was not sent, fix the attachment first. One focused follow-up on the same thread may finish the job; after that, return the useful work and say what is missing. Do not claim to have looked at an image or video unless the client showed it to you; `get_output` returns an inline preview for images where the client displays it.

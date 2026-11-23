@@ -15,7 +15,7 @@ Work on improvements only when the person asks. "Work on my queued improvements"
 
 Each improvement has a plain-words `why`, its target page, priority, `status`, and `progress`. `in_flight` means a Daoco thread is on it, and `started` means an app or an unpublished page is; leave both alone unless the person says otherwise. `open` with `stillFoundAt` means a fix marked done that a later check still found; it can be taken on again. `route` says how the brand wants that kind of fix made: `ai_app` (this app), `cms`, or `github` (Daoco makes it), or `none` (a fix on another site).
 
-Call `get_improvement` before changing anything. It gives the measured signal, the suggested change, what the audit saw on the page, the target query, and when it counts as done.
+Call `get_improvement` before changing anything. It gives the measured signal, the suggested change, what the audit saw on the page, the target query, and when it counts as done. When the brand's Search Console is connected, `get_site_report` shows how the page or query is doing now, with no workspace tokens.
 
 ## Make the change
 
@@ -28,4 +28,4 @@ Daoco confirms fixes itself. Anything a page audit measures (title, meta descrip
 
 ## When Daoco should make the change
 
-For a fix routed to `cms` or `github`, or when the person would rather Daoco did it, start `/fix-site` with the improvement's id through `start_work`. It uses workspace tokens, and its changes to a live site ask for approval in Daoco. A suggested new page is written with `/write-page` (see `list_content_ideas` in `daoco-research-and-planning`).
+For a fix routed to `cms` or `github`, or when the person would rather Daoco did it, ask Daoco to make it: the `fix-site` workflow with the improvement's id through `run_workflow` where it is listed, or `start_work` asking in words to fix that improvement. It uses workspace tokens, and its changes to a live site ask for approval in Daoco. A suggested new page is made from its idea's `startWork` (see `list_content_ideas` in `daoco-research-and-planning`).

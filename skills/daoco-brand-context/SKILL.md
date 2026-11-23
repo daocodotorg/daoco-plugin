@@ -1,28 +1,37 @@
 ---
 name: daoco-brand-context
-description: Read and apply a personal or business brand's saved voice, audience, positioning, and visual identity from Daoco, and export the brand. Use for brand questions, to ground the user's current work in their Daoco context, or to take the brand's files out of Daoco.
+description: Read and apply a personal or business brand's saved voice, audience, positioning, rules, and visual identity from Daoco, get the brief for one piece of work, save the person's standing rules, and export the brand. Use for brand questions, to ground the person's current work in their Daoco context, or to take the brand's files out of Daoco.
 ---
 
 # Use brand context
 
-Read [the shared Daoco workflow](../daoco-marketing/SKILL.md) for brand selection and tool boundaries. Call `get_brand_context` for the selected brand and use the relevant facts and documents to answer or inform the user's work. Pass `task` to get the context for one piece of work (the visual style Daoco would use, the logo, and matching document passages), or `sections` for the full visual identity (`visual`), the document list (`documents`), or the procedures the brand can run with their commands (`procedures`). Use `search_brand` to find passages in brand documents or core brand images, and to read a document's full text by its `documentId`. These reads use no workspace tokens.
+Read [the shared Daoco workflow](../daoco-marketing/SKILL.md) for brand selection and tool boundaries. These reads use no workspace tokens.
+
+## Read the brand
+
+- `get_brand_context`: who the brand is: identity, summary, voice and tone, audience, positioning, colors, and typography. Its `sections` and `task` arguments are deprecated; use the reads below.
+- `get_brief` with a `task` (the piece of work in a sentence) and optionally a `channel`: everything that applies to that work, in the order a writer weighs it. `rules` are the person's standing instructions and preferences, `voice` is the brand's learned voice, `whatsWorking` is what the brand's results show for that channel, and it adds the visual style, colors, logo, and matching passages. Where a rule and a What's working line disagree, the rule wins. Call it before writing anything for the brand.
+- `get_brand_visuals`: the full visual identity, including the Daoco Looks and their example images.
+- `list_brand_documents`: the brand's documents and shared files. `search_brand` finds passages in them or in brand images, and reads a document's full text by `documentId`.
 
 If `get_brand_context` reports `setup`, the brand is still being set up; follow `daoco-brand-setup` instead of treating its context as complete.
 
-For a personal brand, preserve the person's stated expertise, point of view, audience, and preferred voice. Do not invent credentials, personal experiences, endorsements, or first-person stories, and do not treat a belief Daoco inferred as one the person stated. When the person's opinions, stories, audience, or positioning are thin, Daoco can ask for them: `/beliefs` and `/stories` (personal brands), `/audience`, and `/positioning` start a short interview through `start_work`. Each run asks its questions and offers candidates, then ends; the person replies through `continue_work` on that thread with the same command and their answers, in their words. The result is proposed for the person to review in Daoco, not applied. For a business brand, preserve its offers, customers, positioning, and approved claims. The saved context and the user's request determine the voice; do not assume every personal brand speaks casually or every business uses "we."
+## Apply it
 
-Distinguish saved facts from your suggestions. If a material detail is missing, ask a focused question or state the gap. Do not turn a brand question into a paid work request. If the user asks to update the saved brand, delegate that request through `start_work` or the relevant existing thread and report the actual result. Daoco proposes brand changes for review in Daoco; a proposal is not a saved change.
+For a personal brand, keep the person's stated expertise, point of view, audience, and voice. Do not invent credentials, experiences, endorsements, or first-person stories, and do not treat a belief Daoco inferred as one the person stated. When opinions, stories, audience, or positioning are thin, Daoco can interview the person: its `pov`, `beliefs`, `stories`, `audience`, and `positioning` workflows (by command where `run_workflow` is listed; otherwise ask in words, such as "interview me about what I believe on pricing"). A run asks its questions and ends; the person answers through `continue_work` on that thread, in their words. The result is a proposal the person reviews in Daoco. For a business, keep its offers, customers, positioning, and approved claims. Do not assume every personal brand is casual or every business says "we".
 
-## Turn context into useful guidance
+Answer the question rather than dumping every document. When the person asks how to write in their voice, pull the relevant traits from `get_brief` and show a short example, kept distinct from a saved rule. For a voice review, compare the text with the brief, point to specific phrases, and suggest a revision without changing supported claims. Distinguish saved facts from your suggestions; if a detail is missing, ask or name the gap. If documents conflict, prefer a clearly dated or designated current source, and ask when the choice matters.
 
-Answer the brand question rather than dumping every saved document. When the user asks how to write in their voice, extract the relevant traits and show a short application grounded in their material. Keep your example distinct from a saved brand rule.
+Reading and advising here does not need a paid Daoco run. To change the saved brand, delegate through `start_work` and report the result: Daoco proposes brand changes for review in Daoco, and a proposal is not a saved change.
 
-For a voice review, compare the supplied text with the saved guidance. For a fuller check of a draft (would the audience recognize the problem, can every claim be supported), `/read-through` runs one in Daoco. Point to specific phrases, explain the mismatch, and suggest a revision without changing supported claims. Reading context and advising in this chat does not require starting a paid Daoco run. Creating durable marketing deliverables or saving changes does.
+## Save the person's rules
 
-If saved documents conflict, identify the conflict and prefer a clearly dated or explicitly designated current source. Ask when that choice would materially affect the answer and the current source is unclear. Do not quietly merge contradictory positioning or treat a suggestion from this conversation as saved brand truth.
+When the person states a standing rule for the brand in their own words ("never use emojis in captions", "always link the pricing page"), offer to save it, then call `remember` with `kind` (instruction or preference), the rule as they said it, and `appliesTo` (writing, visuals, or all). Save only what the person said, never your own inference, a one-off request, or anything about approvals or permissions. `following` is `pending` until Daoco checks whether it is a rule for all future work; say so rather than promising it is followed everywhere. A rule the person tells Daoco directly always outranks one this app passed on.
+
+`remember` works only after a workspace owner or admin turns on **May pass on what I tell it** for this app on Daoco's Assistants page, with the app's brand selected in that workspace. When it is refused, tell the person that, or suggest they tell Daoco the rule themselves. `forget` archives memories this app saved, by the `memoryId` `remember` returned. An app keeps at most 20 memories per brand.
 
 ## Use the brand outside Daoco
 
-When the person writes copy, builds a page, or designs something in this app, apply the saved context directly: `get_brand_context` with a `task` returns the voice, visual style, logo, colors, fonts, and passages for that piece of work. Image links from `search_brand` and the `visual` section can serve as references.
+When the person writes copy, builds a page, or designs something in this app, apply the brand directly: `get_brief` for the work, `get_brand_visuals` for logo, colors, fonts, and reference images.
 
-`export_brand` builds a zip of the brand: profile, summary, rules, brand documents, voice, Daoco Looks with their example images, competitors, skills as `SKILL.md` folders, and library images and documents. Connections, posts, threads, and analytics are not included. Only a workspace owner or admin can export. Call again while it builds; a ready export's download link works for a day. Use it when the person asks for their brand files or wants to keep them in a project. `create_brand` can set up a brand from an export's files.
+`export_brand` builds a zip of the brand: profile, summary, rules, documents, voice, Daoco Looks with examples, competitors, skills as `SKILL.md` folders, and library files. Connections, posts, threads, and analytics are left out. Only a workspace owner or admin can export. Call again while it builds; the download link works for a day. `create_brand` can set up a brand from an export's files.
